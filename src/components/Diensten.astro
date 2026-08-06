@@ -1,0 +1,163 @@
+---
+const diensten = [
+  {
+    naam: 'Water',
+    icon: `<svg viewBox="0 0 56 56" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="20" y1="10" x2="36" y2="10"/>
+      <line x1="28" y1="10" x2="28" y2="15"/>
+      <rect x="10" y="15" width="10" height="7" rx="1"/>
+      <rect x="20" y="17" width="16" height="5" rx="2"/>
+      <rect x="36" y="16" width="4" height="7" rx="1"/>
+      <path d="M40 19 Q44 19 44 24 L44 34"/>
+      <rect x="41" y="34" width="6" height="3" rx="1"/>
+      <path d="M44 41 Q44 48 40 48 Q36 48 36 44 Q36 40 44 41 Z"/>
+    </svg>`,
+  },
+  {
+    naam: 'Gas',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <ellipse cx="24" cy="32" rx="14" ry="5"/>
+      <ellipse cx="24" cy="32" rx="7" ry="2.5"/>
+      <path d="M17 29 Q15 22 19 17 Q18 23 21 22 Q19 17 23 12 Q22 19 26 19 Q24 14 28 11 Q27 18 30 17 Q28 22 31 29"/>
+    </svg>`,
+  },
+  {
+    naam: 'Licht',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M17 30 Q12 25 12 19 A12 12 0 0 1 36 19 Q36 25 31 30 L31 35 L17 35 Z"/>
+      <line x1="17" y1="35" x2="31" y2="35"/>
+      <line x1="18" y1="39" x2="30" y2="39"/>
+      <line x1="20" y1="43" x2="28" y2="43"/>
+      <line x1="24" y1="5" x2="24" y2="8"/>
+      <line x1="36" y1="9" x2="34" y2="11"/>
+      <line x1="40" y1="19" x2="37" y2="19"/>
+      <line x1="12" y1="9" x2="14" y2="11"/>
+      <line x1="8" y1="19" x2="11" y2="19"/>
+    </svg>`,
+  },
+  {
+    naam: 'CV & Verwarming',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <line x1="8" y1="12" x2="40" y2="12"/>
+      <line x1="8" y1="38" x2="40" y2="38"/>
+      <line x1="8" y1="12" x2="8" y2="38"/>
+      <line x1="15" y1="12" x2="15" y2="38"/>
+      <line x1="22" y1="12" x2="22" y2="38"/>
+      <line x1="29" y1="12" x2="29" y2="38"/>
+      <line x1="40" y1="12" x2="40" y2="38"/>
+      <line x1="15" y1="38" x2="15" y2="44"/>
+      <line x1="29" y1="38" x2="29" y2="44"/>
+    </svg>`,
+  },
+  {
+    naam: 'Warmtepompen',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="16" width="20" height="24" rx="2"/>
+      <circle cx="13" cy="28" r="7"/>
+      <line x1="13" y1="21" x2="13" y2="35"/>
+      <line x1="6" y1="28" x2="20" y2="28"/>
+      <line x1="3" y1="22" x2="23" y2="22"/>
+      <rect x="27" y="20" width="18" height="14" rx="2"/>
+      <path d="M30 19 Q32.5 15 35 19" stroke-width="2"/>
+      <path d="M30 15 Q32.5 11 35 15" stroke-width="2"/>
+      <path d="M23 25 Q25 25 27 27"/>
+      <path d="M23 31 Q25 31 27 29"/>
+    </svg>`,
+  },
+  {
+    naam: 'Zonnepanelen',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="4" y="15" width="34" height="20" rx="2"/>
+      <line x1="4" y1="22" x2="38" y2="22"/>
+      <line x1="4" y1="29" x2="38" y2="29"/>
+      <line x1="16" y1="15" x2="16" y2="35"/>
+      <line x1="27" y1="15" x2="27" y2="35"/>
+      <line x1="15" y1="35" x2="12" y2="42"/>
+      <line x1="27" y1="35" x2="30" y2="42"/>
+      <line x1="10" y1="42" x2="32" y2="42"/>
+      <circle cx="42" cy="10" r="4"/>
+      <line x1="42" y1="3" x2="42" y2="5"/>
+      <line x1="46" y1="6" x2="45" y2="7"/>
+      <line x1="48" y1="10" x2="46" y2="10"/>
+      <line x1="38" y1="6" x2="39" y2="7"/>
+      <line x1="36" y1="10" x2="38" y2="10"/>
+    </svg>`,
+  },
+  {
+    naam: 'Complete elektra',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M26 6 L12 26 L22 26 L20 42 L36 22 L26 22 Z"/>
+    </svg>`,
+  },
+  {
+    naam: 'Meterkasten',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="8" width="32" height="32" rx="2"/>
+      <line x1="20" y1="8" x2="20" y2="40"/>
+      <circle cx="30" cy="18" r="3.5"/>
+      <circle cx="30" cy="30" r="3.5"/>
+      <line x1="8" y1="24" x2="20" y2="24"/>
+    </svg>`,
+  },
+  {
+    naam: "Airco's",
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="6" y="13" width="36" height="14" rx="3"/>
+      <line x1="6" y1="21" x2="42" y2="21"/>
+      <line x1="14" y1="27" x2="14" y2="36"/>
+      <line x1="24" y1="27" x2="24" y2="36"/>
+      <line x1="34" y1="27" x2="34" y2="36"/>
+    </svg>`,
+  },
+  {
+    naam: 'Badkamer renovatie',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M10 38 L38 38 L38 30 Q38 26 34 26 L14 26 Q10 26 10 30 Z"/>
+      <line x1="10" y1="30" x2="10" y2="18"/>
+      <line x1="10" y1="18" x2="16" y2="18"/>
+      <line x1="16" y1="14" x2="16" y2="22"/>
+      <line x1="13" y1="17" x2="19" y2="17"/>
+      <line x1="14" y1="38" x2="12" y2="43"/>
+      <line x1="34" y1="38" x2="36" y2="43"/>
+    </svg>`,
+  },
+  {
+    naam: 'Sanitair',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="8" y="28" width="32" height="8" rx="4"/>
+      <path d="M20 28 L20 16 Q20 10 26 10 L28 10 Q34 10 34 16 L34 28"/>
+      <line x1="8" y1="36" x2="8" y2="42"/>
+      <line x1="40" y1="36" x2="40" y2="42"/>
+      <line x1="6" y1="42" x2="42" y2="42"/>
+    </svg>`,
+  },
+  {
+    naam: 'Hybride warmtepompen',
+    icon: `<svg viewBox="0 0 48 48" fill="none" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+      <rect x="3" y="16" width="18" height="22" rx="2"/>
+      <circle cx="12" cy="27" r="6"/>
+      <line x1="12" y1="21" x2="12" y2="33"/>
+      <line x1="6" y1="27" x2="18" y2="27"/>
+      <rect x="27" y="20" width="18" height="12" rx="2"/>
+      <path d="M29 19 Q31.5 15 34 19" stroke-width="2"/>
+      <path d="M29 15 Q31.5 11 34 15" stroke-width="2"/>
+      <circle cx="38" cy="14" r="3"/>
+      <path d="M21 24 Q24 24 27 26"/>
+      <path d="M21 30 Q24 30 27 28"/>
+    </svg>`,
+  },
+];
+---
+
+<section id="diensten">
+  <div class="section-eyebrow">Wat wij doen</div>
+  <h2 class="section-title">Onze diensten</h2>
+  <div class="diensten-grid">
+    {diensten.map(dienst => (
+      <div class="dienst-item">
+        <div class="dienst-icon" set:html={dienst.icon} />
+        <span class="dienst-naam">{dienst.naam}</span>
+      </div>
+    ))}
+  </div>
+</section>
