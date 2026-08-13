@@ -1,4 +1,6 @@
 ---
+import erkend from '../assets/erkend_leerbedrijf.png';
+import covrij from '../assets/co-vrij-logo.png';
 ---
 
 <section id="contact" style="background: var(--grijs);">
@@ -38,6 +40,13 @@
             <div class="kaart-overlay">Klik voor routebeschrijving</div>
           </div>
         </a>
+
+        <!-- Keurmerken -->
+        <div class="keurmerken">
+          <img src={erkend.src} alt="Erkend leerbedrijf" />
+          <img src={covrij.src} alt="CO Vrij - Koolmonoxide vrij" />
+        </div>
+
       </div>
 
       <form class="contact-form">
