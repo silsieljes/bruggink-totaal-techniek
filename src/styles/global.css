@@ -48,7 +48,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
     background: transparent;
   }
 
-  .nav-dropdown:hover .nav-submenu { display: block; }
+  .nav-dropdown:hover .nav-submenu,
+  .nav-dropdown.open .nav-submenu { display: block; }
 
   .nav-submenu li a {
     display: flex;
@@ -86,7 +87,8 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
     box-shadow: 8px 8px 24px rgba(0,0,0,0.4);
   }
 
-  .nav-sub-dropdown:hover .nav-submenu-2 { display: block; }
+  .nav-sub-dropdown:hover .nav-submenu-2,
+  .nav-sub-dropdown.open .nav-submenu-2 { display: block; }
 
   .nav-submenu-2 li a {
     display: block;
