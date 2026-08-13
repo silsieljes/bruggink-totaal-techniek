@@ -181,15 +181,18 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   .keurmerken {
     display: flex;
     align-items: center;
-    gap: 24px;
-    margin-top: 20px;
+    gap: 32px;
+    margin-top: 24px;
     flex-wrap: wrap;
   }
 
   .keurmerken img {
-    height: 80px;
+    height: 120px;
     object-fit: contain;
-    filter: brightness(1);
+  }
+
+  .keurmerken img:last-child {
+    height: 140px;
   }
 
 @media (max-width: 768px) {
