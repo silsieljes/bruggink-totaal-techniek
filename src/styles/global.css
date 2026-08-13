@@ -229,8 +229,22 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   .nav-inner {
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: flex-end;
     width: 100%;
+    position: relative;
+  }
+
+  /* Desktop menu - altijd zichtbaar op grote schermen */
+  .nav-desktop {
+    display: flex !important;
+  }
+
+  /* Mobiele bar - verborgen op desktop */
+  .nav-mobile-bar {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
   }
 
   .nav-logo-text {
@@ -242,7 +256,6 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
     text-decoration: none;
     line-height: 1.1;
     letter-spacing: 0.04em;
-    display: none;
   }
 
   .nav-logo-text span {
@@ -253,7 +266,12 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
     letter-spacing: 0.15em;
   }
 
-  /* ── HAMBURGER - standaard verborgen op desktop ── */
+  /* Mobiel menu - verborgen op desktop */
+  .nav-mobile {
+    display: none !important;
+  }
+
+  /* Hamburger - verborgen op desktop */
   .hamburger {
     display: none;
     flex-direction: column;
@@ -262,7 +280,6 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
     border: none;
     cursor: pointer;
     padding: 8px;
-    z-index: 200;
   }
 
   .hamburger span {
@@ -278,94 +295,84 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   .hamburger.open span:nth-child(2) { opacity: 0; }
   .hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-  /* ── MOBIEL ── */
   @media (max-width: 768px) {
     nav {
       padding: 0 20px;
+      height: auto;
+      min-height: 90px;
+      flex-direction: column;
+      align-items: stretch;
       justify-content: flex-start;
     }
 
     .nav-inner {
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
     }
 
-    .nav-logo-text { display: block; }
-    .hamburger { display: flex; }
+    /* Verberg desktop menu op mobiel */
+    .nav-desktop {
+      display: none !important;
+    }
 
-    .nav-links {
-      display: none;
+    /* Toon mobiele bar */
+    .nav-mobile-bar {
+      display: flex;
+      height: 90px;
+    }
+
+    /* Toon hamburger */
+    .hamburger {
+      display: flex;
+    }
+
+    /* Mobiel menu standaard verborgen */
+    .nav-mobile {
+      display: none !important;
       position: fixed;
       top: 90px;
       left: 0;
       right: 0;
       bottom: 0;
       background: rgba(14,14,14,0.98);
-      flex-direction: column;
-      align-items: flex-start;
-      padding: 24px;
-      gap: 0;
+      flex-direction: column !important;
+      padding: 16px 24px;
       overflow-y: auto;
       z-index: 99;
       list-style: none;
+      gap: 0;
     }
 
-    .nav-links.open { display: flex; }
+    /* Toon mobiel menu als open */
+    .nav-mobile.open {
+      display: flex !important;
+    }
 
-    .nav-links > li {
-      width: 100%;
+    .nav-mobile li {
       border-bottom: 1px solid rgba(255,255,255,0.07);
     }
 
-    .nav-links > li > a,
-    .nav-links > li > .nav-parent {
+    .nav-mobile li a {
       display: block;
-      padding: 16px 0;
-      font-size: 18px;
+      padding: 14px 0;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-weight: 600;
+      font-size: 17px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
       color: var(--wit);
+      text-decoration: none;
     }
 
-    .nav-submenu {
-      display: none;
-      position: static;
-      transform: none;
-      box-shadow: none;
-      background: rgba(255,255,255,0.04);
-      border-top: none;
-      border-left: 3px solid var(--oranje);
-      margin-left: 12px;
-      padding: 4px 0;
-      min-width: unset;
-    }
+    .nav-mobile li a:hover { color: var(--oranje); }
 
-    .nav-dropdown.open > .nav-submenu { display: block; }
-    .nav-dropdown:hover > .nav-submenu { display: none; }
-    .nav-dropdown.open > .nav-submenu { display: block; }
-
-    .nav-submenu li a {
-      padding: 12px 16px;
-      font-size: 15px;
-    }
-
-    .nav-submenu-2 {
-      position: static;
-      transform: none;
-      box-shadow: none;
-      background: rgba(255,255,255,0.04);
-      border-left: 3px solid rgba(232,85,0,0.4);
-      margin-left: 12px;
-    }
-
-    .nav-sub-dropdown.open > .nav-submenu-2 { display: block; }
-
-    .nav-cta {
+    .nav-mobile .nav-cta {
       margin-top: 16px;
+      background: var(--oranje);
+      padding: 14px 28px;
+      border-radius: 3px;
       display: inline-block;
-      padding: 14px 28px !important;
-    }
-
-    .nav-dropdown {
-      padding-bottom: 0;
-      margin-bottom: 0;
     }
 
     #diensten { display: none; }
