@@ -192,7 +192,7 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   }
 
   .keurmerken img:last-child {
-    height: 140px;
+    height: 180px;
   }
 
 @media (max-width: 768px) {
