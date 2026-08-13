@@ -253,9 +253,11 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   .keurmerken {
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 32px;
     margin-top: 24px;
     flex-wrap: wrap;
+    width: 100%;
   }
 
   .keurmerken img {
