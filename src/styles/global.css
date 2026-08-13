@@ -222,12 +222,12 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
   }
 
   .keurmerken img {
-    height: 120px;
+    height: 160px;
     object-fit: contain;
   }
 
   .keurmerken img:last-child {
-    height: 180px;
+    height: 220px;
   }
 
 @media (max-width: 768px) {
