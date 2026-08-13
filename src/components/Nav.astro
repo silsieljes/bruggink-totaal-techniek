@@ -50,7 +50,6 @@
 </nav>
 
 <script>
-  // Klik-gebaseerd menu zodat submenus niet wegschieten
   document.querySelectorAll('.nav-dropdown > a').forEach(link => {
     link.addEventListener('click', (e) => {
       const href = link.getAttribute('href');
@@ -64,23 +63,17 @@
     });
   });
 
-  document.querySelectorAll('.nav-sub-dropdown > a').forEach(link => {
+  // Submenu items - NOOIT preventDefault op echte links
+  document.querySelectorAll('.nav-submenu a, .nav-submenu-2 a').forEach(link => {
     link.addEventListener('click', (e) => {
-      const href = link.getAttribute('href');
-      if (href && href.startsWith('#')) {
-        e.preventDefault();
-      }
-      const parent = link.parentElement;
-      const isOpen = parent.classList.contains('open');
-      document.querySelectorAll('.nav-sub-dropdown.open').forEach(el => el.classList.remove('open'));
-      if (!isOpen) parent.classList.add('open');
+      e.stopPropagation();
+      // Gewoon de link volgen, niets blokkeren
     });
   });
 
-  // Sluit menu als je erbuiten klikt
   document.addEventListener('click', (e) => {
     if (!e.target.closest('.nav-dropdown')) {
-      document.querySelectorAll('.nav-dropdown.open, .nav-sub-dropdown.open').forEach(el => el.classList.remove('open'));
+      document.querySelectorAll('.nav-dropdown.open').forEach(el => el.classList.remove('open'));
     }
   });
 </script>
