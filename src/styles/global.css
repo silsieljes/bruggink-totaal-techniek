@@ -423,6 +423,29 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
     }
 
     #diensten { display: none; }
+
+    /* Contact grid op mobiel: formulier bovenaan, info eronder */
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .contact-grid .contact-form {
+      order: -1;
+    }
+
+    .contact-info {
+      align-items: center;
+      text-align: center;
+    }
+
+    .contact-item {
+      justify-content: center;
+    }
+
+    .keurmerken {
+      justify-content: center;
+    }
   }
 
 
