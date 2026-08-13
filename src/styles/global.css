@@ -351,17 +351,19 @@ footer { background: #070707; padding: 40px 60px; display: flex; align-items: ce
 
     .nav-mobile li {
       border-bottom: 1px solid rgba(255,255,255,0.07);
+      display: block !important;
+      width: 100%;
     }
 
     .nav-mobile li a {
-      display: block;
+      display: block !important;
       padding: 14px 0;
       font-family: 'Barlow Condensed', sans-serif;
       font-weight: 600;
       font-size: 17px;
       letter-spacing: 0.06em;
       text-transform: uppercase;
-      color: var(--wit);
+      color: var(--wit) !important;
       text-decoration: none;
     }
 
