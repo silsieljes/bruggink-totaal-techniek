@@ -55,19 +55,13 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
     margin-top: 0;
   }
 
-  /* Onzichtbare brug tussen nav-item en submenu */
-  .nav-dropdown::after {
-    content: '';
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    height: 10px;
-    background: transparent;
+  /* Padding zodat muis van nav naar submenu kan bewegen zonder gap */
+  .nav-dropdown {
+    padding-bottom: 20px;
+    margin-bottom: -20px;
   }
 
-  .nav-dropdown:hover .nav-submenu,
-  .nav-dropdown.open .nav-submenu { display: block; }
+  .nav-dropdown:hover .nav-submenu { display: block; }
 
   .nav-submenu li a {
     display: flex;
