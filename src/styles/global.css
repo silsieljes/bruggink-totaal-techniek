@@ -154,6 +154,21 @@ section { padding: 96px 60px; }
 #diensten { background: var(--grijs); }
 .diensten-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; padding: 0 20px; }
 .dienst-item { background: var(--zwart); padding: 36px 20px 28px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; border: 1px solid rgba(255,255,255,0.04); transition: border-color 0.2s,background 0.2s; cursor: default; width: 160px; box-sizing: border-box; }
+
+  .dienst-item-link {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  .dienst-item-link:hover {
+    background: var(--grijs-licht);
+    border-color: var(--oranje);
+  }
+
+  .dienst-item-link:hover .dienst-naam {
+    color: var(--oranje);
+  }
+
 .dienst-item:hover { background: var(--grijs-licht); border-color: var(--oranje); }
 .dienst-icon { width: 64px; height: 64px; background: var(--oranje); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
 .dienst-icon svg { width: 36px; height: 36px; }
