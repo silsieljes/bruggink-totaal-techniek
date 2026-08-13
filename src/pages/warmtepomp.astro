@@ -119,9 +119,10 @@ import '../styles/global.css';
           <div class="zp-foto">
             <img src="/warmtepomp/warmtepomp3.jpeg" alt="CV installatie met warmtepomp" loading="lazy" />
           </div>
-          <div class="zp-foto zp-foto-groot">
+          <div class="zp-foto">
             <img src="/warmtepomp/warmtepomp4.jpeg" alt="Voor en na warmtepomp installatie" loading="lazy" />
           </div>
+        </div>
         </div>
       </div>
     </section>
@@ -172,11 +173,41 @@ import '../styles/global.css';
     max-width: 700px;
   }
 
+  .zp-galerij {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    gap: 12px;
+  }
+
+  .zp-foto-groot {
+    grid-column: span 2;
+  }
+
+  .zp-foto img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s;
+  }
+
+  .zp-foto-groot img {
+    height: 400px;
+  }
+
+  .zp-foto {
+    overflow: hidden;
+  }
+
+  .zp-foto:hover img {
+    transform: scale(1.04);
+  }
+
   @media (max-width: 768px) {
     .wp-hero-content { padding: 0 24px 50px; }
-    #wp-tekst > div { grid-template-columns: 1fr !important; gap: 40px !important; }
     .zp-galerij { grid-template-columns: 1fr; }
-
+    .zp-foto-groot { grid-column: span 1; }
     .zp-foto img, .zp-foto-groot img { height: 220px; }
   }
 </style>
