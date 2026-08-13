@@ -24,7 +24,7 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
   .nav-submenu {
     display: none;
     position: absolute;
-    top: calc(100% + 12px);
+    top: 100%;
     left: 50%;
     transform: translateX(-50%);
     background: #111111;
@@ -34,6 +34,18 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
     z-index: 200;
     padding: 8px 0;
     box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    margin-top: 0;
+  }
+
+  /* Onzichtbare brug tussen nav-item en submenu */
+  .nav-dropdown::after {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    height: 10px;
+    background: transparent;
   }
 
   .nav-dropdown:hover .nav-submenu { display: block; }
