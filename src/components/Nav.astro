@@ -2,26 +2,17 @@
 ---
 <nav>
   <div class="nav-inner">
-    <a href="/" class="nav-logo-text">Bruggink<span>Totaal Techniek</span></a>
 
-    <!-- Hamburger knop -->
-    <button class="hamburger" id="hamburger" aria-label="Menu openen">
-      <span></span>
-      <span></span>
-      <span></span>
-    </button>
-
-    <!-- Menu links -->
-    <ul class="nav-links" id="nav-menu">
-
+    <!-- Desktop menu -->
+    <ul class="nav-links nav-desktop">
       <li class="nav-dropdown">
         <span class="nav-parent">Diensten &#9662;</span>
         <ul class="nav-submenu">
           <li class="nav-sub-dropdown">
             <span class="nav-parent">Elektra &#9658;</span>
             <ul class="nav-submenu-2">
-              <li><a href="/#diensten">Installatie</a></li>
               <li><a href="/meterkast">Meterkast</a></li>
+              <li><a href="/#diensten">Installatie</a></li>
             </ul>
           </li>
           <li class="nav-sub-dropdown">
@@ -58,33 +49,49 @@
       <li><a href="/#contact">Contact</a></li>
       <li><a href="tel:0650485599" class="nav-cta">Bel direct</a></li>
     </ul>
+
+    <!-- Mobiel: logo + hamburger -->
+    <div class="nav-mobile-bar">
+      <a href="/" class="nav-logo-text">Bruggink<span>Totaal Techniek</span></a>
+      <button class="hamburger" id="hamburger" aria-label="Menu openen">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <!-- Mobiel uitklapmenu -->
+    <ul class="nav-links nav-mobile" id="nav-menu">
+      <li><a href="/#diensten">Diensten</a></li>
+      <li><a href="/meterkast">— Meterkast</a></li>
+      <li><a href="/cv-ketels">— CV Ketels</a></li>
+      <li><a href="/vloerverwarming">— (Vloer)verwarming</a></li>
+      <li><a href="/#over">Verduurzamen</a></li>
+      <li><a href="/warmtepomp">— Warmtepomp</a></li>
+      <li><a href="/zonnepanelen">— Zonnepanelen</a></li>
+      <li><a href="/airco">— Airco</a></li>
+      <li><a href="/laadpaal">— Laadpaal</a></li>
+      <li><a href="/#over">Over ons</a></li>
+      <li><a href="/#contact">Contact</a></li>
+      <li><a href="tel:0650485599" class="nav-cta">Bel direct</a></li>
+    </ul>
+
   </div>
 </nav>
 
 <script>
   const hamburger = document.getElementById('hamburger');
   const menu = document.getElementById('nav-menu');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('open');
-    menu.classList.toggle('open');
-  });
-
-  // Submenu toggle op mobiel
-  document.querySelectorAll('.nav-parent').forEach(parent => {
-    parent.addEventListener('click', () => {
-      if (window.innerWidth <= 768) {
-        const li = parent.parentElement;
-        li.classList.toggle('open');
-      }
+  if (hamburger && menu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('open');
+      menu.classList.toggle('open');
     });
-  });
-
-  // Sluit menu na klik op link
-  document.querySelectorAll('.nav-links a').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('open');
-      menu.classList.remove('open');
+    document.querySelectorAll('#nav-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('open');
+        menu.classList.remove('open');
+      });
     });
-  });
+  }
 </script>
