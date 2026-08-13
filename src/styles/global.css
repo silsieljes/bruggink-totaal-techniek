@@ -17,6 +17,24 @@ nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; display: flex; a
 .nav-cta:hover { background: var(--oranje-licht) !important; }
 
 
+
+  .nav-parent {
+    color: var(--wit);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    cursor: default;
+    display: block;
+    padding: 10px 20px;
+    transition: color 0.2s;
+  }
+  .nav-dropdown > .nav-parent {
+    padding: 0;
+  }
+  .nav-dropdown > .nav-parent:hover { color: var(--oranje); }
+
   /* ── DROPDOWN ── */
   .nav-dropdown { position: relative; }
   .nav-dropdown > a { cursor: pointer; }
