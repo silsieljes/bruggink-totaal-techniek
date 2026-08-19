@@ -1,0 +1,204 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Onze leveranciers — Bruggink Totaal Techniek werkt met toonaangevende A-merken voor ketels, warmtepompen, zonnepanelen, laadpalen en meer." />
+    <title>Onze leveranciers — Bruggink Totaal Techniek</title>
+  </head>
+  <body>
+    <Nav />
+
+    <!-- HERO -->
+    <div style="position:relative;height:40vh;min-height:300px;display:flex;align-items:flex-end;overflow:hidden;margin-top:90px;background:#0e0e0e;">
+      <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1a1a1a 0%,#0e0e0e 100%);"></div>
+      <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:#E85500;"></div>
+      <div style="position:relative;z-index:2;padding:0 60px 60px;max-width:800px;">
+        <div class="hero-eyebrow">Kwaliteit & betrouwbaarheid</div>
+        <h1 class="hero-title">Onze <span>leveranciers</span></h1>
+        <p class="hero-sub">Wij werken uitsluitend met bewezen A-merken. Zo garanderen wij kwaliteit, garantie en een lange levensduur voor elke installatie.</p>
+      </div>
+    </div>
+
+    <!-- LEVERANCIERS -->
+    <section style="background: var(--zwart);">
+      <div style="max-width:1100px;margin:0 auto;">
+
+        <!-- Ketels, warmtepompen & vloerverwarming -->
+        <div class="lev-categorie">
+          <div class="lev-header">
+            <div class="lev-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" width="28" height="28"><path d="M12 2C6 10 4 14 4 17a8 8 0 0 0 16 0c0-3-2-7-8-15z"/></svg>
+            </div>
+            <h2 class="lev-titel">Ketels, warmtepompen & vloerverwarming</h2>
+          </div>
+          <div class="lev-merken">
+            <div class="lev-merk"><span class="lev-naam">Vaillant</span><p class="lev-omschrijving">Toonaangevend Duits merk voor CV-ketels, warmtepompen en hybride systemen</p></div>
+            <div class="lev-merk"><span class="lev-naam">Intergas</span><p class="lev-omschrijving">Betrouwbare Nederlandse CV-ketels met uitstekende prijs-kwaliteitverhouding</p></div>
+            <div class="lev-merk"><span class="lev-naam">Atlantic</span><p class="lev-omschrijving">Warmtepompen en hybride systemen voor efficiënte verwarming</p></div>
+            <div class="lev-merk"><span class="lev-naam">Roth</span><p class="lev-omschrijving">Specialisten in vloerverwarmingssystemen en leidingwerk</p></div>
+          </div>
+        </div>
+
+        <div class="lev-divider"></div>
+
+        <!-- Meterkast & Schakelmateriaal -->
+        <div class="lev-categorie">
+          <div class="lev-header">
+            <div class="lev-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" width="28" height="28"><rect x="2" y="3" width="20" height="18" rx="2"/><line x1="8" y1="3" x2="8" y2="21"/><circle cx="14" cy="9" r="2"/><circle cx="14" cy="15" r="2"/></svg>
+            </div>
+            <h2 class="lev-titel">Meterkast & schakelmateriaal</h2>
+          </div>
+          <div class="lev-merken">
+            <div class="lev-merk"><span class="lev-naam">Hager</span><p class="lev-omschrijving">Professionele groepenverdelers en schakelmateriaal voor woningen en bedrijven</p></div>
+            <div class="lev-merk"><span class="lev-naam">Busch-Jaeger</span><p class="lev-omschrijving">Hoogwaardig schakelmateriaal en domotica voor een stijlvolle afwerking</p></div>
+          </div>
+        </div>
+
+        <div class="lev-divider"></div>
+
+        <!-- Zonnepanelen & Omvormers -->
+        <div class="lev-categorie">
+          <div class="lev-header">
+            <div class="lev-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" width="28" height="28"><rect x="2" y="7" width="20" height="13" rx="2"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="9" y1="7" x2="9" y2="20"/><line x1="15" y1="7" x2="15" y2="20"/><circle cx="19" cy="4" r="2"/></svg>
+            </div>
+            <h2 class="lev-titel">Omvormers & zonnepanelen</h2>
+          </div>
+          <div class="lev-merken">
+            <div class="lev-merk"><span class="lev-naam">SolarEdge</span><p class="lev-omschrijving">Toonaangevend in slimme omvormers en optimizers voor maximale zonne-energieopbrengst</p></div>
+          </div>
+        </div>
+
+        <div class="lev-divider"></div>
+
+        <!-- Laadpalen -->
+        <div class="lev-categorie">
+          <div class="lev-header">
+            <div class="lev-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h2 class="lev-titel">Laadpalen</h2>
+          </div>
+          <div class="lev-merken">
+            <div class="lev-merk"><span class="lev-naam">Zaptec</span><p class="lev-omschrijving">Compacte, strakke thuislaadpalen met slimme laad­functionaliteit en app-bediening</p></div>
+          </div>
+        </div>
+
+        <div class="lev-divider"></div>
+
+        <!-- Airco -->
+        <div class="lev-categorie">
+          <div class="lev-header">
+            <div class="lev-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.2" width="28" height="28"><rect x="2" y="8" width="20" height="10" rx="2"/><line x1="2" y1="14" x2="22" y2="14"/><line x1="7" y1="18" x2="7" y2="22"/><line x1="17" y1="18" x2="17" y2="22"/></svg>
+            </div>
+            <h2 class="lev-titel">Airco</h2>
+          </div>
+          <div class="lev-merken">
+            <div class="lev-merk"><span class="lev-naam">LG</span><p class="lev-omschrijving">Stille, energiezuinige airconditioners voor woning en bedrijf — zowel koeling als verwarming</p></div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section style="background: var(--grijs);text-align:center;padding:80px 60px;">
+      <div class="section-eyebrow" style="justify-content:center;">Vrijblijvend advies</div>
+      <h2 class="section-title">Vragen over onze merken?</h2>
+      <p style="color:#aaa;font-size:18px;max-width:600px;margin:0 auto 40px;line-height:1.7;">
+        Wij adviseren u graag over welk merk en welk type installatie het beste past bij uw situatie en budget.
+      </p>
+      <a href="/#contact" class="btn-primary">Neem contact op</a>
+    </section>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .lev-categorie {
+    padding: 48px 0;
+  }
+
+  .lev-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .lev-icon {
+    width: 56px;
+    height: 56px;
+    background: var(--oranje);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .lev-titel {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--wit);
+    letter-spacing: 0.04em;
+  }
+
+  .lev-merken {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 20px;
+    margin-left: 72px;
+  }
+
+  .lev-merk {
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid var(--oranje);
+    padding: 20px 24px;
+    border-radius: 2px;
+    transition: background 0.2s;
+  }
+
+  .lev-merk:hover {
+    background: rgba(255,255,255,0.08);
+  }
+
+  .lev-naam {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--wit);
+    letter-spacing: 0.06em;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  .lev-omschrijving {
+    color: #aaa;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+
+  .lev-divider {
+    height: 1px;
+    background: rgba(255,255,255,0.07);
+  }
+
+  @media (max-width: 768px) {
+    .lev-merken { margin-left: 0; grid-template-columns: 1fr; }
+    .lev-titel { font-size: 22px; }
+  }
+</style>
