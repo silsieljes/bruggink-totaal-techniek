@@ -1,0 +1,194 @@
+---
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Vacature monteur elektro/installatietechniek bij Bruggink Totaal Techniek in Hardenberg." />
+    <title>Vacatures — Bruggink Totaal Techniek</title>
+  </head>
+  <body>
+    <Nav />
+
+    <!-- HERO -->
+    <div style="position:relative;height:50vh;min-height:350px;display:flex;align-items:flex-end;overflow:hidden;margin-top:90px;">
+      <div style="position:absolute;inset:0;background-image:url('/vacature-monteur.png');background-size:cover;background-position:center 20%;filter:brightness(0.35);"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(14,14,14,1) 0%,rgba(14,14,14,0.4) 60%,transparent 100%);"></div>
+      <div style="position:absolute;left:0;top:0;bottom:0;width:5px;background:#E85500;"></div>
+      <div style="position:relative;z-index:2;padding:0 60px 70px;max-width:800px;">
+        <div class="hero-eyebrow">Werken bij Bruggink</div>
+        <h1 class="hero-title">Toe aan een<br><span>nieuwe uitdaging?</span></h1>
+        <p class="hero-sub">Wij zijn op zoek naar een enthousiaste monteur elektro/installatietechniek om ons groeiende team te versterken.</p>
+        <a href="mailto:info@bruggink-totaaltechniek.nl" class="btn-primary">Solliciteer direct</a>
+      </div>
+    </div>
+
+    <!-- USP BALK -->
+    <div class="usp-balk">
+      <div class="usp-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Jong & groeiend bedrijf</div>
+      <div class="usp-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Afwisselend werk</div>
+      <div class="usp-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Regio Overijssel</div>
+      <div class="usp-item"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Per direct beschikbaar</div>
+    </div>
+
+    <!-- VACATURE -->
+    <section style="background: var(--zwart);">
+      <div style="max-width:900px;margin:0 auto;">
+
+        <div class="vac-card">
+          <div class="vac-badge">Openstaande vacature</div>
+          <h2 class="vac-titel">Monteur elektro / installatietechniek</h2>
+          <p class="vac-intro">
+            Vanwege het toenemende aantal werkzaamheden zijn wij per direct op zoek naar een monteur elektro/installatietechniek. Het is een afwisselende en uitdagende baan in een enthousiast en jong team binnen een groeiend bedrijf.
+          </p>
+
+          <div class="vac-sectie">
+            <h3 class="vac-subtitel">Wat ga je doen?</h3>
+            <ul class="vac-lijst">
+              <li>Aanleggen en onderhouden van elektra-installaties</li>
+              <li>Installeren van CV-ketels, warmtepompen en vloerverwarming</li>
+              <li>Plaatsen van zonnepanelen en laadpalen</li>
+              <li>Uitvoeren van sanitaire en loodgieterswerken</li>
+              <li>Werken aan diverse projecten bij particulieren en bedrijven</li>
+            </ul>
+          </div>
+
+          <div class="vac-sectie">
+            <h3 class="vac-subtitel">Functie-eisen</h3>
+            <ul class="vac-lijst">
+              <li>Opleiding niveau 2/3/4 in een technische richting</li>
+              <li>Werk- en/of leerervaring in de installatietechniek</li>
+              <li>In bezit van rijbewijs B</li>
+              <li>Zelfstandig en hands-on instelling</li>
+              <li>Woonachtig in de regio Overijssel</li>
+            </ul>
+          </div>
+
+          <div class="vac-sectie">
+            <h3 class="vac-subtitel">Wat bieden wij?</h3>
+            <ul class="vac-lijst">
+              <li>Afwisselend werk in een jong en enthousiast team</li>
+              <li>Ruimte voor persoonlijke ontwikkeling en groei</li>
+              <li>Moderne bedrijfswagen en gereedschap</li>
+              <li>Marktconform salaris</li>
+              <li>Prettige werksfeer in een groeiend bedrijf</li>
+            </ul>
+          </div>
+
+          <div class="vac-cta">
+            <p>Lijkt dit jou wat? Neem dan contact met ons op!</p>
+            <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:24px;">
+              <a href="tel:0650485599" class="btn-primary">📞 06 50 48 55 99</a>
+              <a href="mailto:info@bruggink-totaaltechniek.nl" class="btn-outline">✉ info@bruggink-totaaltechniek.nl</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <Footer />
+  </body>
+</html>
+
+<style>
+  .vac-card {
+    background: var(--grijs);
+    border-radius: 4px;
+    padding: 48px;
+    border-top: 4px solid var(--oranje);
+  }
+
+  .vac-badge {
+    display: inline-block;
+    background: var(--oranje);
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+
+  .vac-titel {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 900;
+    text-transform: uppercase;
+    color: var(--wit);
+    line-height: 1;
+    margin-bottom: 24px;
+  }
+
+  .vac-intro {
+    color: #ccc;
+    font-size: 17px;
+    line-height: 1.8;
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .vac-sectie {
+    margin-bottom: 36px;
+    padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+
+  .vac-subtitel {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--oranje);
+    letter-spacing: 0.08em;
+    margin-bottom: 16px;
+  }
+
+  .vac-lijst {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .vac-lijst li {
+    color: #aaa;
+    font-size: 16px;
+    padding-left: 20px;
+    position: relative;
+    line-height: 1.6;
+  }
+
+  .vac-lijst li::before {
+    content: '▸';
+    color: var(--oranje);
+    position: absolute;
+    left: 0;
+  }
+
+  .vac-cta {
+    margin-top: 40px;
+  }
+
+  .vac-cta p {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--wit);
+    letter-spacing: 0.04em;
+  }
+
+  @media (max-width: 768px) {
+    .vac-card { padding: 28px 20px; }
+  }
+</style>
