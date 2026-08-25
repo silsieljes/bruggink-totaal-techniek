@@ -49,14 +49,59 @@
 
       <form class="contact-form">
         <div class="form-row">
-          <input type="text" placeholder="Voornaam" />
-          <input type="text" placeholder="Achternaam" />
+          <input type="text" id="cf-voornaam" placeholder="Voornaam" />
+          <input type="text" id="cf-achternaam" placeholder="Achternaam" />
         </div>
-        <input type="email" placeholder="E-mailadres" />
-        <input type="tel" placeholder="Telefoonnummer" />
-        <textarea placeholder="Uw bericht of vraag..."></textarea>
-        <button type="submit" class="btn-primary" style="align-self:flex-start;border:none;cursor:pointer;">Verstuur bericht</button>
+        <input type="email" id="cf-email" placeholder="E-mailadres" />
+        <input type="tel" id="cf-telefoon" placeholder="Telefoonnummer" />
+        <textarea id="cf-bericht" placeholder="Uw bericht of vraag..."></textarea>
+        <button type="button" id="cf-btn" class="btn-primary" onclick="verstuurBericht()" style="align-self:flex-start;border:none;cursor:pointer;">Verstuur bericht</button>
+        <div id="cf-success" style="display:none;background:rgba(0,180,0,0.1);border:1px solid #00b400;color:#4cff4c;padding:14px 20px;border-radius:3px;font-family:'Barlow Condensed',sans-serif;font-size:16px;">
+          ✓ Uw bericht is verstuurd! Wij nemen zo snel mogelijk contact met u op.
+        </div>
+        <div id="cf-error" style="display:none;background:rgba(232,85,0,0.1);border:1px solid #E85500;color:#E85500;padding:14px 20px;border-radius:3px;font-family:'Barlow Condensed',sans-serif;font-size:16px;">
+          ✗ Er ging iets mis. Bel ons op 06 50 48 55 99.
+        </div>
       </form>
+
+      <script is:inline>
+        async function verstuurBericht() {
+          const btn = document.getElementById('cf-btn');
+          const voornaam = document.getElementById('cf-voornaam').value;
+          const email = document.getElementById('cf-email').value;
+          const bericht = document.getElementById('cf-bericht').value;
+          if (!voornaam || !email || !bericht) {
+            alert('Vul naam, e-mail en bericht in.');
+            return;
+          }
+          btn.textContent = 'Verzenden...';
+          btn.disabled = true;
+          try {
+            const resp = await fetch('https://morning-haze-eaa1.sil-callprofit.workers.dev', {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify({
+                voornaam,
+                achternaam: document.getElementById('cf-achternaam').value,
+                email,
+                telefoon: document.getElementById('cf-telefoon').value,
+                bericht,
+              }),
+            });
+            const data = await resp.json();
+            if (data.success) {
+              document.getElementById('cf-success').style.display = 'block';
+              document.getElementById('cf-error').style.display = 'none';
+              ['cf-voornaam','cf-achternaam','cf-email','cf-telefoon','cf-bericht'].forEach(id => document.getElementById(id).value = '');
+            } else { throw new Error(); }
+          } catch {
+            document.getElementById('cf-error').style.display = 'block';
+            document.getElementById('cf-success').style.display = 'none';
+          }
+          btn.textContent = 'Verstuur bericht';
+          btn.disabled = false;
+        }
+      </script>
     </div>
   </div>
 </section>
