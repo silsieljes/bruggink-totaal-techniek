@@ -64,8 +64,14 @@
         </div>
       </form>
 
+      <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
       <script is:inline>
         async function verstuurBericht() {
+          const token = document.querySelector('[name="cf-turnstile-response"]')?.value;
+          if (!token) {
+            alert('Verifieer eerst dat u geen robot bent.');
+            return;
+          }
           const btn = document.getElementById('cf-btn');
           const voornaam = document.getElementById('cf-voornaam').value;
           const email = document.getElementById('cf-email').value;
@@ -86,6 +92,7 @@
                 email,
                 telefoon: document.getElementById('cf-telefoon').value,
                 bericht,
+                turnstileToken: token,
               }),
             });
             const data = await resp.json();
